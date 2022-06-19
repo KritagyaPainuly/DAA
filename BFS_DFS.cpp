@@ -23,6 +23,20 @@ void BFS(int g[][max],int n,int start)
         }
     }
 }
+void DFS(int g[][max],int n,int start)
+{
+    static int vist[max]={0};
+    if(vist[start]==0)
+    {
+        cout<<start<<" ";
+        vist[start]=1;
+        for(int i=1;i<=n;i++)
+        {
+            if(g[start][i]==1 && vist[i]==0)
+            DFS(g,n,i);
+        }
+    }
+}
 int main()
 {
     int n,m;
@@ -42,5 +56,5 @@ int main()
     for(int j=1;j<n+1;j++)
     cout<<g[i][j]<<" ";
     cout<<endl;}
-    BFS(g,n,4);
+    DFS(g,n,4);
 }
