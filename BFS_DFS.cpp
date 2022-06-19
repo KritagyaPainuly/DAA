@@ -52,9 +52,5 @@ int main()
         g[x][y]=1;
         g[y][x]=1;
     }
-    for(int i=1;i<n+1;i++){
-    for(int j=1;j<n+1;j++)
-    cout<<g[i][j]<<" ";
-    cout<<endl;}
     DFS(g,n,4);
 }
